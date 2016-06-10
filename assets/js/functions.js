@@ -1,3 +1,7 @@
+var host = "http://taherj.github.io";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+
 document.addEventListener("DOMContentLoaded", function() {
   smoothScroll(1000);
   workBelt();
