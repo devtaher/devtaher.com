@@ -1,2 +1,1 @@
-Taher Ismail J
-Portfolio Website
+Taher's Portfolio Website
