@@ -1,24 +1,28 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useRef, useEffect } from 'react';
+import styles from './Page.module.scss';
 
-import Article from "../Main/Article";
-import PageHeader from "./PageHeader";
-import Content from "../Main/Content";
-
-const Page = props => {
-  const { page } = props;
-  const html = (page || {}).html;
-
-  return (
-    <Article>
-      <PageHeader {...page.frontmatter} />
-      <Content html={html} />
-    </Article>
-  );
+type Props = {
+  title?: string,
+  children: React.Node
 };
 
-Page.propTypes = {
-  page: PropTypes.object.isRequired
+const Page = ({ title, children }: Props) => {
+  const pageRef = useRef();
+
+  useEffect(() => {
+    pageRef.current.scrollIntoView();
+  });
+
+  return (
+    <div ref={pageRef} className={styles['page']}>
+      <div className={styles['page__inner']}>
+        { title && <h1 className={styles['page__title']}>{title}</h1>}
+        <div className={styles['page__body']}>
+          {children}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Page;

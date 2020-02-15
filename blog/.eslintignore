@@ -1,3 +1,3 @@
-public/*
-static/*
-.cache/*
+/flow-typed/*
+/public/*
+/node_modules/*

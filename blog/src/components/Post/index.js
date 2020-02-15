@@ -1,1 +1,2 @@
-export { default } from "./Post";
+// @flow strict
+export { default } from './Post';
